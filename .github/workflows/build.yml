@@ -34,11 +34,13 @@ jobs:
           - tox-env: py311
             python-version: '3.11'
             continue-on-error: true
+          # lxml doesn't yet have Windows wheels for 3.11, so keep 3.10 for now:
+          # https://bugs.launchpad.net/lxml/+bug/1977998
           - tox-env: nolxml
-            python-version: '3.11'
+            python-version: '3.10'
             continue-on-error: false
           - tox-env: nohtml5lib
-            python-version: '3.11'
+            python-version: '3.10'
             continue-on-error: false
 
     env:
